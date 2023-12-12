@@ -8,6 +8,9 @@
     height: 100vh;
     background-image: url(./bg-img.png);
     color: #fff !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .wrapper {
     width: 90%;
@@ -16,7 +19,7 @@
     background-color: transparent;
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 38%;
     left: 50%;
     padding: 3em;
     border-radius: 1em;
@@ -62,11 +65,16 @@
     right: -8%;
   }
   #final-value {
+    background-color: #fdcf3b;
+    border-radius: 5px;
     font-size: 1.5em;
     text-align: center;
     margin-top: 1.5em;
-    color: #202020;
+    color: #fff;
+    text-shadow: #000;
     font-weight: 500;
+    margin-bottom: 20px;
+    padding: 20px 0;
   }
   @media screen and (max-width: 768px) {
     .wrapper {

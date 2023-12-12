@@ -15,12 +15,7 @@ const rotationValues = [
 const data = [16, 16, 16, 16, 16, 16];
 //background color for each piece
 var pieColors = [
-  "red",
-  "white",
-  "blue",
-  "black",
-  "yellow",
-  "green",
+  "#9336B4", 
 ];
 //Create chart
 let myChart = new Chart(wheel, {
@@ -30,7 +25,7 @@ let myChart = new Chart(wheel, {
   type: "pie",
   data: {
     //Labels(values which are to be displayed on chart)
-    labels: [1, 2, 3, 4, 5, 6],
+    labels: ["$10","$20", "$30", "$40", "$50", "$60"],
     //Settings for dataset/pie
     datasets: [
       {
@@ -58,17 +53,19 @@ let myChart = new Chart(wheel, {
     },
   },
 });
-//display value based on the randomAngle
+// display value based on the randomAngle
 const valueGenerator = (angleValue) => {
   for (let i of rotationValues) {
-    //if the angleValue is between min and max then display it
+    // if the angleValue is between min and max then display it
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-      finalValue.innerHTML = `<p>Value: ${i.value}</p>`;
+      const wonAmount = i.value * 10; // Assuming each value corresponds to $10
+      finalValue.innerHTML = `<p>Congratulations! You won $${wonAmount}</p>`;
       spinBtn.disabled = false;
       break;
     }
   }
 };
+
 //Spinner count
 let count = 0;
 //100 rotations for animation and last rotation for result
